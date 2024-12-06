@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:movies_app/core/constants/constants.dart';
 import 'package:movies_app/core/styles/styles.dart';
 import 'package:movies_app/features/home/presentation/views/widgets/custom_movie_image.dart';
 import 'package:movies_app/features/home/presentation/views/widgets/movie_rating.dart';
