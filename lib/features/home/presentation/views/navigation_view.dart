@@ -56,21 +56,18 @@ class _NavigationViewState extends State<NavigationView> {
           ),
         ],
       ),
-      body: SafeArea(
-        child: PageView(
-          physics: const NeverScrollableScrollPhysics(),
-          controller: controller,
-          onPageChanged: (value) {
-            selectedIndex = value;
-            setState(() {});
-          },
-          children: const [
-            HomeView(),
-            SearchView(),
-            BrowseCategoryView(),
-            WatchlistView()
-          ],
-        ),
+      body: PageView(
+        controller: controller,
+        onPageChanged: (value) {
+          selectedIndex = value;
+          setState(() {});
+        },
+        children: const [
+          HomeView(),
+          SearchView(),
+          BrowseCategoryView(),
+          WatchlistView()
+        ],
       ),
     );
   }
