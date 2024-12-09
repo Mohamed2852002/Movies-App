@@ -15,15 +15,23 @@ class MovieSpecifications extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Wrap(
+          const Wrap(
             alignment: WrapAlignment.start,
             spacing: 9,
             runSpacing: 3,
             children: [
-              MovieTags(label: 'Action',),
-              MovieTags(label: 'Drama',),
-              MovieTags(label: 'Romance',),
-              MovieTags(label: 'comedy',),
+              MovieTags(
+                label: 'Action',
+              ),
+              MovieTags(
+                label: 'Drama',
+              ),
+              MovieTags(
+                label: 'Romance',
+              ),
+              MovieTags(
+                label: 'comedy',
+              ),
             ],
           ),
           const RSizedBox(height: 13),

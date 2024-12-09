@@ -3,8 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../../core/themes/app_colors.dart';
 
 class MovieTags extends StatelessWidget {
-  String label;
-  MovieTags({
+
+ final String label;
+  const MovieTags({
     super.key,
     required this.label
   });

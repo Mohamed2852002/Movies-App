@@ -4,10 +4,10 @@ import '../../../../../core/styles/styles.dart';
 import '../../../../../core/themes/app_colors.dart';
 
 class WatchlistDetalis extends StatelessWidget {
-  String title;
-  String date;
-  String details;
-  WatchlistDetalis({
+  final String title;
+  final String date;
+  final String details;
+  const WatchlistDetalis({
     super.key,
     required this.title,
     required this.date,

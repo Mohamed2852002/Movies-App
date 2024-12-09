@@ -13,8 +13,8 @@ class CustomListItem extends StatelessWidget {
         height: 89.h,
         fit: BoxFit.cover,
       ),
-      title: Text("Harry Potter Pack"),
-      subtitle: Text("2001\nThe Philosopher`s Stone"),
+      title: const Text("Harry Potter Pack"),
+      subtitle: const Text("2001\nThe Philosopher`s Stone"),
     );
   }
 }

@@ -5,8 +5,8 @@ import 'package:flutter_svg/svg.dart';
 import '../../../../../core/constants/constants.dart';
 
 class WatchlistImage extends StatelessWidget {
-  String image;
-  WatchlistImage({super.key,required this.image});
+  final String image;
+  const WatchlistImage({super.key,required this.image});
 
   @override
   Widget build(BuildContext context) {

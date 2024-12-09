@@ -6,7 +6,7 @@ import 'package:movies_app/features/watchlist/presentation/views/widgets/watchli
 import '../model/watch_list_model.dart';
 
 class ListWatchlist extends StatelessWidget {
-  ListWatchlist({super.key});
+  const ListWatchlist({super.key});
 
   @override
   Widget build(BuildContext context) {
