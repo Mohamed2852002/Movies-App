@@ -14,6 +14,7 @@ abstract class AppRouter {
         path: kMovieDetailsView,
         builder: (context, state) => const MovieDetailsView(),
       ),
+      
     ],
   );
 }
