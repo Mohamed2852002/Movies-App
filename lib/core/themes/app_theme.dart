@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:movies_app/core/themes/app_colors.dart';
+import '../styles/styles.dart';
 
 class AppTheme {
   static final appTheme = ThemeData(
+    appBarTheme: AppBarTheme(
+      centerTitle: true,
+      titleTextStyle: Styles.textStyle20
+    ),
     colorScheme: ColorScheme.fromSeed(
       brightness: Brightness.dark,
       seedColor: AppColors.secondaryColor,
