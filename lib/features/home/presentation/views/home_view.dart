@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:movies_app/features/home/presentation/views/widgets/new_movies_section.dart';
-import 'package:movies_app/features/home/presentation/views/widgets/popular_movies_section.dart';
-import 'package:movies_app/features/home/presentation/views/widgets/recommended_movies_section.dart';
+import 'package:movies_app/features/home/presentation/views/widgets/home_view_widgets/new_movies_section.dart';
+import 'package:movies_app/features/home/presentation/views/widgets/home_view_widgets/popular_movies_section.dart';
+import 'package:movies_app/features/home/presentation/views/widgets/home_view_widgets/recommended_movies_section.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -16,7 +16,7 @@ class HomeView extends StatelessWidget {
           RSizedBox(height: 25),
           NewMoviesSection(),
           RSizedBox(height: 30),
-          RecommendedMoviesSection(),
+          RecommendedMoviesSection(text: 'Recomended'),
         ],
       ),
     );

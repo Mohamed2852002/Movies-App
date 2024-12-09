@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:movies_app/core/styles/styles.dart';
 import 'package:movies_app/core/utils/app_router.dart';
-import 'package:movies_app/features/home/presentation/views/widgets/custom_movie_image.dart';
-import 'package:movies_app/features/home/presentation/views/widgets/popular_movie_image_preview.dart';
+import 'package:movies_app/core/utils/widgets/custom_movie_image.dart';
+import 'package:movies_app/features/home/presentation/views/widgets/home_view_widgets/custom_movie_image_preview.dart';
 
 class PopularMoviesListItem extends StatelessWidget {
   const PopularMoviesListItem({super.key});
@@ -21,7 +21,7 @@ class PopularMoviesListItem extends StatelessWidget {
             top: 0,
             left: 0,
             right: 0,
-            child: PopularMovieImagePreview(),
+            child: CustomMovieImagePreview(),
           ),
           Positioned(
             left: 20.w,

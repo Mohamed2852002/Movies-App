@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:movies_app/features/home/presentation/views/widgets/popular_movies_list_item.dart';
+import 'package:movies_app/features/home/presentation/views/widgets/home_view_widgets/popular_movies_list_item.dart';
 
 class PopularMoviesSectionBody extends StatelessWidget {
   const PopularMoviesSectionBody({super.key});

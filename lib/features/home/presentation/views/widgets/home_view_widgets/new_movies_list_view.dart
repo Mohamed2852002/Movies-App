@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:movies_app/features/home/presentation/views/widgets/custom_movie_image.dart';
+import 'package:movies_app/core/utils/widgets/custom_movie_image.dart';
 
 class NewMoviesListView extends StatelessWidget {
   const NewMoviesListView({super.key});
@@ -8,7 +8,7 @@ class NewMoviesListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RSizedBox(
-      height: 127,
+      height: 128,
       child: ListView.separated(
         padding: REdgeInsets.only(left: 27),
         scrollDirection: Axis.horizontal,
