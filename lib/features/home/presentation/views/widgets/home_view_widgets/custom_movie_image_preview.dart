@@ -4,8 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:movies_app/core/constants/constants.dart';
 
-class PopularMovieImagePreview extends StatelessWidget {
-  const PopularMovieImagePreview({super.key});
+class CustomMovieImagePreview extends StatelessWidget {
+  const CustomMovieImagePreview({super.key});
 
   @override
   Widget build(BuildContext context) {

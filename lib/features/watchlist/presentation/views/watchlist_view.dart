@@ -9,18 +9,16 @@ class WatchlistView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: REdgeInsets.only(left: 17,top: 55),
-          child: Align(
-            alignment: Alignment.centerLeft,
-            child: Text(
-              'Watchlist',
-              style: Styles.textStyle16,
-            ),
+          padding: REdgeInsets.only(left: 17, top: 50),
+          child: Text(
+            'Watchlist',
+            style: Styles.textStyle22,
           ),
         ),
-        const RSizedBox(height: 15),
+        const RSizedBox(height: 12),
         const ListWatchlist()
       ],
     );

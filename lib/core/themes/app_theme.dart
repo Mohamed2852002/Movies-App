@@ -4,9 +4,26 @@ import '../styles/styles.dart';
 
 class AppTheme {
   static final appTheme = ThemeData(
+    inputDecorationTheme: InputDecorationTheme(
+      border: OutlineInputBorder(
+        borderSide: BorderSide(
+          color: Colors.white.withOpacity(0.4),
+        ),
+        borderRadius: BorderRadius.circular(40),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderSide: BorderSide(
+          color: Colors.white.withOpacity(0.4),
+        ),
+        borderRadius: BorderRadius.circular(40),
+      ),
+      hintStyle: Styles.textStyle16,
+      fillColor: const Color(0xFF514F4F),
+      filled: true,
+    ),
     appBarTheme: AppBarTheme(
       centerTitle: true,
-      titleTextStyle: Styles.textStyle20
+      titleTextStyle: Styles.textStyle20,
     ),
     colorScheme: ColorScheme.fromSeed(
       brightness: Brightness.dark,

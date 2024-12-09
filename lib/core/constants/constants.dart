@@ -6,3 +6,5 @@ const String kPlayButtonIcon = 'assets/icons/play_button.svg';
 const String kStarIcon = 'assets/icons/star_icon.svg';
 const String kBookmark = 'assets/icons/bookmark_icon.svg';
 const String kBookmarkSelected = 'assets/icons/bookmark_selected_icon.svg';
+const String kNoMoviesImage = 'assets/images/no_movies_image.svg';
+const String kTextFieldSearchIcon = 'assets/icons/text_field_search_icon.svg';
