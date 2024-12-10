@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:movies_app/features/home/presentation/views/widgets/home_view_widgets/recommended_movies_section_body.dart';
+import 'package:movies_app/features/home/presentation/views/widgets/movie_details_widgets/similar_movies_section_body.dart';
 
-class RecommendedMoviesSection extends StatelessWidget {
-  const RecommendedMoviesSection({super.key, required this.text});
-  final String text;
+class SimilarMoviesSection extends StatelessWidget {
+  const SimilarMoviesSection({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -13,7 +13,7 @@ class RecommendedMoviesSection extends StatelessWidget {
         color: Theme.of(context).colorScheme.surface,
       ),
       width: double.infinity,
-      child: const RecommendedMoviesSectionBody(),
+      child: const SimilarMoviesSectionBody(),
     );
   }
 }

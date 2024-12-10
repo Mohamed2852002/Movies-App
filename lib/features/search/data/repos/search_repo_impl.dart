@@ -9,5 +9,4 @@ class SearchRepoImpl implements SearchRepo {
     // TODO: implement getSearchedMovies
     throw UnimplementedError();
   }
-  
 }

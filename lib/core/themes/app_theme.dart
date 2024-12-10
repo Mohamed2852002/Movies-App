@@ -4,6 +4,9 @@ import '../styles/styles.dart';
 
 class AppTheme {
   static final appTheme = ThemeData(
+    progressIndicatorTheme: const ProgressIndicatorThemeData(
+      color: AppColors.secondaryColor,
+    ),
     inputDecorationTheme: InputDecorationTheme(
       border: OutlineInputBorder(
         borderSide: BorderSide(
