@@ -13,9 +13,7 @@ class RecommendedMoviesSection extends StatelessWidget {
         color: Theme.of(context).colorScheme.surface,
       ),
       width: double.infinity,
-      child: RecommendedMoviesSectionBody(
-        text: text,
-      ),
+      child: const RecommendedMoviesSectionBody(),
     );
   }
 }

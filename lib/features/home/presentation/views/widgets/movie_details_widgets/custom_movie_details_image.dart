@@ -5,8 +5,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:movies_app/core/constants/constants.dart';
 
 class CustomMovieDetailsImage extends StatefulWidget {
-  const CustomMovieDetailsImage({super.key});
-
+  const CustomMovieDetailsImage({super.key, required this.image});
+  final String image;
   @override
   State<CustomMovieDetailsImage> createState() =>
       _CustomMovieDetailsImageState();
@@ -21,11 +21,10 @@ class _CustomMovieDetailsImageState extends State<CustomMovieDetailsImage> {
         ClipRRect(
           borderRadius: BorderRadius.circular(5.r),
           child: CachedNetworkImage(
-            imageUrl:
-                'https://s.france24.com/media/display/451ed2b8-eed6-11ea-afdd-005056bf87d6/w:1280/p:16x9/messi-1805.jpg',
+            imageUrl: 'https://image.tmdb.org/t/p/original${widget.image}',
             width: 130.w,
             height: 200.h,
-            fit: BoxFit.cover,
+            fit: BoxFit.fill,
           ),
         ),
         GestureDetector(

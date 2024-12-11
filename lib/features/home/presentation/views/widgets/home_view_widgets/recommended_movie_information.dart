@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:movies_app/core/models/movie_model/movie_model.dart';
 import 'package:movies_app/core/styles/styles.dart';
+import 'package:movies_app/core/utils/functions/extract_the_year.dart';
 import 'package:movies_app/features/home/presentation/views/widgets/home_view_widgets/movie_rating.dart';
 
 class RecommendedMovieInformation extends StatelessWidget {
-  const RecommendedMovieInformation({super.key});
-
+  const RecommendedMovieInformation({super.key, required this.movieModel});
+  final MovieModel movieModel;
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -24,17 +26,17 @@ class RecommendedMovieInformation extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const MovieRating(),
+              MovieRating(rating: movieModel.voteAverage ?? 0),
               const RSizedBox(height: 3),
               Text(
-                'Deadpool 2',
+                movieModel.title ?? 'No Title',
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
                 style: Styles.textStyle10,
               ),
               const RSizedBox(height: 3),
               Text(
-                '2018  R  1h 59m',
+                extractTheYear(movieModel.releaseDate),
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
                 style: Styles.textStyle10
