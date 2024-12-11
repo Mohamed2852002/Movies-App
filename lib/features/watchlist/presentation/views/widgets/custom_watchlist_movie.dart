@@ -11,9 +11,13 @@ class CustomWatchlistMovie extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: REdgeInsets.only(bottom: 14, left: 25, right: 25),
-      child:  Row(
+      child: Row(
         children: [
-          CustomMovieImage(width: 140, height: 89, movieModel: MovieModel(),),
+          CustomMovieImage(
+            width: 140,
+            height: 89,
+            movieModel: MovieModel(),
+          ),
           const RSizedBox(width: 16),
           const MovieInformationWidget(),
         ],

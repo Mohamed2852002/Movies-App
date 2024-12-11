@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movies_app/core/styles/styles.dart';
+import 'package:movies_app/features/home/data/models/movie_details_model/movie_details_model.dart';
 
 class MovieNameAndInfoWidget extends StatelessWidget {
-  const MovieNameAndInfoWidget({super.key});
-
+  const MovieNameAndInfoWidget({super.key, required this.movieDetailsModel});
+  final MovieDetailsModel movieDetailsModel;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -18,7 +19,7 @@ class MovieNameAndInfoWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Dora and the lost city of gold',
+            movieDetailsModel.title ?? 'No Title',
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
             style: Styles.textStyle18,
@@ -27,7 +28,7 @@ class MovieNameAndInfoWidget extends StatelessWidget {
             height: 8.h,
           ),
           Text(
-            '2019 PG-13 2h 7m',
+            '${movieDetailsModel.releaseDate} ${movieDetailsModel.runtime}',
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
             style: Styles.textStyle14.copyWith(

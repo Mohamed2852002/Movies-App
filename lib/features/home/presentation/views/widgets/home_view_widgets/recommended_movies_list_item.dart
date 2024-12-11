@@ -16,7 +16,7 @@ class RecommendedMoviesListItem extends StatelessWidget {
           bottomRadius: 0,
           movieModel: movieModel,
         ),
-         RecommendedMovieInformation(movieModel: movieModel)
+        RecommendedMovieInformation(movieModel: movieModel)
       ],
     );
   }

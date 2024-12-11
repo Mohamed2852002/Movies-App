@@ -5,8 +5,8 @@ import 'package:movies_app/core/constants/constants.dart';
 import 'package:movies_app/core/styles/styles.dart';
 
 class MovieDetailsRating extends StatelessWidget {
-  const MovieDetailsRating({super.key});
-
+  const MovieDetailsRating({super.key, required this.rating});
+  final num rating;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -18,7 +18,7 @@ class MovieDetailsRating extends StatelessWidget {
         ),
         const RSizedBox(width: 6),
         Text(
-          '7.7',
+          '$rating',
           style: Styles.textStyle18,
         ),
       ],

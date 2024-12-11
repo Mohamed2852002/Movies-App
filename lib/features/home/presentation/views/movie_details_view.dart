@@ -12,17 +12,17 @@ class MovieDetailsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          "Dora and the lost city of gold",
+        title: Text(
+          movieModel.title ?? 'No Title',
         ),
       ),
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: Column(
           children: [
-            MoviePreviewSection(movieModel: movieModel),
-            const MovieInformationSection(),
-            const RSizedBox(height: 18),
-            const SimilarMoviesSection(),
+            MoviePreviewSection(),
+            MovieInformationSection(),
+            RSizedBox(height: 18),
+            SimilarMoviesSection(),
           ],
         ),
       ),

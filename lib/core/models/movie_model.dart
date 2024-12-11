@@ -1,4 +1,6 @@
-class MovieModel {
+import 'package:movies_app/core/models/movie_entity.dart';
+
+class MovieModel extends MovieEntity {
   bool? adult;
   String? backdropPath;
   List<dynamic>? genreIds;
@@ -29,7 +31,16 @@ class MovieModel {
     this.video,
     this.voteAverage,
     this.voteCount,
-  });
+  }) : super(
+          movieId: id,
+          movieTitle: title,
+          moviePosterPath:posterPath,
+          movieGenres: [],
+          movieReleaseDate: releaseDate,
+          movieVoteAverage: voteAverage,
+          movieOverview: overview,
+          movieRuntime: 0,
+        );
 
   factory MovieModel.fromJson(Map<String, dynamic> json) => MovieModel(
         adult: json['adult'] as bool?,

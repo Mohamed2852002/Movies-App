@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movies_app/core/themes/app_theme.dart';
 import 'package:movies_app/core/utils/app_router.dart';
-import 'package:movies_app/core/utils/setup_service_locator.dart';
+import 'package:movies_app/core/utils/functions/setup_service_locator.dart';
 import 'package:movies_app/core/utils/simple_bloc_observer.dart';
 
 void main() async {
