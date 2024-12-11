@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:movies_app/core/models/movie_model/movie_model.dart';
 import 'package:movies_app/core/styles/styles.dart';
+import 'package:movies_app/core/utils/functions/convert_to_hours.dart';
+import 'package:movies_app/core/utils/functions/extract_the_year.dart';
 
 class MovieNameAndInfoWidget extends StatelessWidget {
-  const MovieNameAndInfoWidget({super.key});
-
+  const MovieNameAndInfoWidget({super.key, required this.movieModel});
+  final MovieModel movieModel;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -18,7 +21,7 @@ class MovieNameAndInfoWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Dora and the lost city of gold',
+            movieModel.title ?? 'No Title',
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
             style: Styles.textStyle18,
@@ -27,7 +30,7 @@ class MovieNameAndInfoWidget extends StatelessWidget {
             height: 8.h,
           ),
           Text(
-            '2019 PG-13 2h 7m',
+            '${extractTheYear(movieModel.releaseDate)} - ${convertToHours(movieModel.runtime)}',
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
             style: Styles.textStyle14.copyWith(

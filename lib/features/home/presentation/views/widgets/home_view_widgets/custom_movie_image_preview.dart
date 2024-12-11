@@ -5,19 +5,19 @@ import 'package:flutter_svg/svg.dart';
 import 'package:movies_app/core/constants/constants.dart';
 
 class CustomMovieImagePreview extends StatelessWidget {
-  const CustomMovieImagePreview({super.key});
-
+  const CustomMovieImagePreview({super.key, required this.image});
+  final String image;
   @override
   Widget build(BuildContext context) {
     return Stack(
       alignment: Alignment.center,
       children: [
         CachedNetworkImage(
-          imageUrl:
-              'https://s.france24.com/media/display/451ed2b8-eed6-11ea-afdd-005056bf87d6/w:1280/p:16x9/messi-1805.jpg',
+          imageUrl: 'https://image.tmdb.org/t/p/original$image',
           fit: BoxFit.cover,
           width: double.infinity,
           height: 215.h,
+          errorWidget: (context, url, error) => const Icon(Icons.error),
         ),
         SvgPicture.asset(kPlayButtonIcon),
       ],

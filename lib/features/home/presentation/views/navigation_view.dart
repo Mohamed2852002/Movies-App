@@ -64,11 +64,11 @@ class _NavigationViewState extends State<NavigationView> {
             selectedIndex = value;
             setState(() {});
           },
-          children: const [
-            HomeView(),
-            SearchView(),
+          children: [
+            const HomeView(),
+            const SearchView(),
             BrowseCategoryView(),
-            WatchlistView()
+            const WatchlistView()
           ],
         ),
       ),

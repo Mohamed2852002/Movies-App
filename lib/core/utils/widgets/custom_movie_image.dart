@@ -4,17 +4,21 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:movies_app/core/constants/constants.dart';
+import 'package:movies_app/core/models/movie_model/movie_model.dart';
 import 'package:movies_app/core/utils/app_router.dart';
+import 'package:movies_app/core/utils/widgets/custom_loading_widget.dart';
 
 class CustomMovieImage extends StatefulWidget {
   const CustomMovieImage(
       {super.key,
       required this.width,
       required this.height,
-      this.bottomRadius = 5});
+      this.bottomRadius = 5,
+      required this.movieModel});
   final double width;
   final double height;
   final double bottomRadius;
+  final MovieModel movieModel;
 
   @override
   State<CustomMovieImage> createState() => _CustomMovieImageState();
@@ -28,7 +32,8 @@ class _CustomMovieImageState extends State<CustomMovieImage> {
       children: [
         GestureDetector(
           onTap: () {
-            GoRouter.of(context).push(AppRouter.kMovieDetailsView);
+            GoRouter.of(context)
+                .push(AppRouter.kMovieDetailsView, extra: widget.movieModel);
           },
           child: ClipRRect(
             borderRadius: BorderRadius.vertical(
@@ -37,10 +42,12 @@ class _CustomMovieImageState extends State<CustomMovieImage> {
             ),
             child: CachedNetworkImage(
               imageUrl:
-                  'https://s.france24.com/media/display/451ed2b8-eed6-11ea-afdd-005056bf87d6/w:1280/p:16x9/messi-1805.jpg',
+                  'https://image.tmdb.org/t/p/original${widget.movieModel.posterPath}',
               width: widget.width.w,
               height: widget.height.h,
-              fit: BoxFit.cover,
+              fit: BoxFit.fill,
+              placeholder: (context, url) => const CustomLoadingWidget(),
+              errorWidget: (context, url, error) => const Icon(Icons.error),
             ),
           ),
         ),
