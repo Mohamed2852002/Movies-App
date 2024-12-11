@@ -30,7 +30,7 @@ class MovieNameAndInfoWidget extends StatelessWidget {
             height: 8.h,
           ),
           Text(
-            '${extractTheYear(movieModel.releaseDate ?? '2023-11-21')} - ${convertToHours(movieModel.runtime ?? 120)}',
+            '${extractTheYear(movieModel.releaseDate)} - ${convertToHours(movieModel.runtime)}',
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
             style: Styles.textStyle14.copyWith(

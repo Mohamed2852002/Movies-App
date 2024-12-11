@@ -8,7 +8,7 @@ class CustomWrapWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Wrap(
-      spacing: 9.w,
+      spacing: 5.w,
       runSpacing: 3.h,
       children: tags
           .map(

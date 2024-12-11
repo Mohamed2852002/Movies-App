@@ -36,7 +36,7 @@ class RecommendedMovieInformation extends StatelessWidget {
               ),
               const RSizedBox(height: 3),
               Text(
-                '${extractTheYear(movieModel.releaseDate ?? '2023-11-21')}',
+                extractTheYear(movieModel.releaseDate),
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
                 style: Styles.textStyle10
