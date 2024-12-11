@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:movies_app/core/models/movie_model/movie_model.dart';
 import 'package:movies_app/core/styles/styles.dart';
-import 'package:movies_app/features/home/data/models/movie_details_model/movie_details_model.dart';
+import 'package:movies_app/core/utils/functions/convert_to_hours.dart';
+import 'package:movies_app/core/utils/functions/extract_the_year.dart';
 
 class MovieNameAndInfoWidget extends StatelessWidget {
-  const MovieNameAndInfoWidget({super.key, required this.movieDetailsModel});
-  final MovieDetailsModel movieDetailsModel;
+  const MovieNameAndInfoWidget({super.key, required this.movieModel});
+  final MovieModel movieModel;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -19,7 +21,7 @@ class MovieNameAndInfoWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            movieDetailsModel.title ?? 'No Title',
+            movieModel.title ?? 'No Title',
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
             style: Styles.textStyle18,
@@ -28,7 +30,7 @@ class MovieNameAndInfoWidget extends StatelessWidget {
             height: 8.h,
           ),
           Text(
-            '${movieDetailsModel.releaseDate} ${movieDetailsModel.runtime}',
+            '${extractTheYear(movieModel.releaseDate ?? '2023-11-21')} - ${convertToHours(movieModel.runtime ?? 120)}',
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
             style: Styles.textStyle14.copyWith(

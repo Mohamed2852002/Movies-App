@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:movies_app/core/constants/constants.dart';
-import 'package:movies_app/core/models/movie_model.dart';
+import 'package:movies_app/core/models/movie_model/movie_model.dart';
 import 'package:movies_app/core/utils/app_router.dart';
 import 'package:movies_app/core/utils/widgets/custom_loading_widget.dart';
 

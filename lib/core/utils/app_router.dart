@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:movies_app/core/models/movie_model.dart';
+import 'package:movies_app/core/models/movie_model/movie_model.dart';
 import 'package:movies_app/core/utils/functions/setup_service_locator.dart';
 import 'package:movies_app/features/home/data/repos/movie_details_repo_impl.dart';
 import 'package:movies_app/features/home/presentation/view_model/get_movie_details_cubit/get_movie_details_cubit.dart';

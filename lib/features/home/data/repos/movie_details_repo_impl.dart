@@ -1,9 +1,8 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:movies_app/core/error/failure.dart';
-import 'package:movies_app/core/models/movie_model.dart';
+import 'package:movies_app/core/models/movie_model/movie_model.dart';
 import 'package:movies_app/core/utils/api_service.dart';
-import 'package:movies_app/features/home/data/models/movie_details_model/movie_details_model.dart';
 import 'package:movies_app/features/home/data/repos/movie_details_repo.dart';
 
 class MovieDetailsRepoImpl implements MovieDetailsRepo {
@@ -11,13 +10,13 @@ class MovieDetailsRepoImpl implements MovieDetailsRepo {
 
   MovieDetailsRepoImpl({required this.apiService});
   @override
-  Future<Either<Failure, MovieDetailsModel>> getMovieDetails(
+  Future<Either<Failure, MovieModel>> getMovieDetails(
       {required int movieId}) async {
     String endPoint = 'movie/$movieId?language=en-US';
 
     try {
       var data = await apiService.get(endPoint);
-      MovieDetailsModel movie = MovieDetailsModel.fromJson(data);
+      MovieModel movie = MovieModel.fromJson(data);
       return right(movie);
     } on DioException catch (error) {
       return left(ServerFailure.fromDioException(error));

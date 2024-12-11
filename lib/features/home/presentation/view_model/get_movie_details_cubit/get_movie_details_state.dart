@@ -1,4 +1,4 @@
-import 'package:movies_app/features/home/data/models/movie_details_model/movie_details_model.dart';
+import 'package:movies_app/core/models/movie_model/movie_model.dart';
 
 class GetMovieDetailsState {}
 
@@ -7,7 +7,7 @@ final class GetMovieDetailsInitial extends GetMovieDetailsState {}
 final class GetMovieDetailsLoading extends GetMovieDetailsState {}
 
 final class GetMovieDetailsSuccess extends GetMovieDetailsState {
-  final MovieDetailsModel movie;
+  final MovieModel movie;
 
   GetMovieDetailsSuccess({required this.movie});
 }

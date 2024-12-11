@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:movies_app/core/models/movie_model.dart';
 import 'package:movies_app/core/utils/widgets/custom_error_widget.dart';
 import 'package:movies_app/features/home/presentation/view_model/get_movie_details_cubit/get_movie_details_cubit.dart';
 import 'package:movies_app/features/home/presentation/view_model/get_movie_details_cubit/get_movie_details_state.dart';
@@ -20,7 +19,7 @@ class MoviePreviewSection extends StatelessWidget {
               CustomMovieImagePreview(
                 image: state.movie.posterPath ?? '',
               ),
-              MovieNameAndInfoWidget(movieDetailsModel: state.movie),
+              MovieNameAndInfoWidget(movieModel: state.movie),
             ],
           );
         } else if (state is GetMovieDetailsFailure) {
