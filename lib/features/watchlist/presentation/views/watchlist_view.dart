@@ -18,7 +18,7 @@ class WatchlistView extends StatelessWidget {
             style: Styles.textStyle22,
           ),
         ),
-        const RSizedBox(height: 12),
+        const RSizedBox(height: 16),
         const ListWatchlist()
       ],
     );

@@ -41,8 +41,7 @@ class _CustomMovieImageState extends State<CustomMovieImage> {
               bottom: Radius.circular(widget.bottomRadius.r),
             ),
             child: CachedNetworkImage(
-              imageUrl:
-                  'https://image.tmdb.org/t/p/original${widget.movieModel.posterPath}',
+              imageUrl: '$kImagePath${widget.movieModel.posterPath}',
               width: widget.width.w,
               height: widget.height.h,
               fit: BoxFit.fill,

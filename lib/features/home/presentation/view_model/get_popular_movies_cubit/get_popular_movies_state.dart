@@ -1,4 +1,3 @@
-
 import 'package:movies_app/core/models/movie_model/movie_model.dart';
 
 class GetPopularMoviesState {}
