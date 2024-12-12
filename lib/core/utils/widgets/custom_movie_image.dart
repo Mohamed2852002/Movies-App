@@ -42,7 +42,7 @@ class _CustomMovieImageState extends State<CustomMovieImage> {
             ),
             child: CachedNetworkImage(
               imageUrl:
-                  'https://image.tmdb.org/t/p/original${widget.movieModel.posterPath}',
+                  '$kImagePath${widget.movieModel.posterPath}',
               width: widget.width.w,
               height: widget.height.h,
               fit: BoxFit.fill,

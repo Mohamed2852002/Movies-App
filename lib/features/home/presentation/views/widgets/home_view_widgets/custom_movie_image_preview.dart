@@ -13,7 +13,7 @@ class CustomMovieImagePreview extends StatelessWidget {
       alignment: Alignment.center,
       children: [
         CachedNetworkImage(
-          imageUrl: 'https://image.tmdb.org/t/p/original$image',
+          imageUrl: '$kImagePath$image',
           fit: BoxFit.cover,
           width: double.infinity,
           height: 215.h,
