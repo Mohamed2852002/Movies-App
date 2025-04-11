@@ -19,7 +19,7 @@ class CustomWatchlistMovie extends StatelessWidget {
             movieModel: MovieModel(),
           ),
           const RSizedBox(width: 16),
-          const MovieInformationWidget(),
+          MovieInformationWidget(movie: MovieModel()),
         ],
       ),
     );

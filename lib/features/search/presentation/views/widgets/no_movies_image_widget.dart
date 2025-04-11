@@ -7,10 +7,8 @@ class NoMoviesImageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Center(
-        child: SvgPicture.asset(kNoMoviesImage),
-      ),
+    return Center(
+      child: SvgPicture.asset(kNoMoviesImage),
     );
   }
 }

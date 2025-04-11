@@ -7,7 +7,7 @@ import 'package:movies_app/features/home/presentation/view_model/get_popular_mov
 import 'package:movies_app/features/home/presentation/views/widgets/home_view_widgets/popular_movies_section_body.dart';
 
 class PopularMoviesSection extends StatelessWidget {
-  const PopularMoviesSection({super.key});
+  const  PopularMoviesSection({super.key});
 
   @override
   Widget build(BuildContext context) {
