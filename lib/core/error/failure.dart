@@ -36,9 +36,6 @@ class ServerFailure extends Failure {
       case DioExceptionType.unknown:
         return ServerFailure(
             errorMessage: 'Unexpected Error Occured, Please Try Again!');
-
-      default:
-        return ServerFailure(errorMessage: 'Oops, There was an Error');
     }
   }
 

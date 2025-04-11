@@ -22,7 +22,7 @@ class MovieInformationWidget extends StatelessWidget {
           Text(
             "2001",
             style: Styles.textStyle14
-                .copyWith(color: Colors.white.withOpacity(0.67)),
+                .copyWith(color: Colors.white.withValues(alpha:0.67)),
           ),
           const RSizedBox(height: 5),
           Text(
@@ -30,7 +30,7 @@ class MovieInformationWidget extends StatelessWidget {
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
             style: Styles.textStyle14
-                .copyWith(color: Colors.white.withOpacity(0.67)),
+                .copyWith(color: Colors.white.withValues(alpha:0.67)),
           ),
         ],
       ),
