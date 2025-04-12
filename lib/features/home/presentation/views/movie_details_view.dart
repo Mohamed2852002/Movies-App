@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movies_app/core/models/movie_model/movie_model.dart';
 import 'package:movies_app/features/home/presentation/views/widgets/movie_details_widgets/movie_information_section.dart';
 import 'package:movies_app/features/home/presentation/views/widgets/movie_details_widgets/movie_preview_section.dart';
@@ -21,7 +20,7 @@ class MovieDetailsView extends StatelessWidget {
           children: [
             MoviePreviewSection(),
             MovieInformationSection(),
-            RSizedBox(height: 18),
+            SizedBox(height: 18),
             SimilarMoviesSection(),
           ],
         ),

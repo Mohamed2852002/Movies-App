@@ -20,9 +20,7 @@ class MovieInformationSection extends StatelessWidget {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                CustomMovieDetailsImage(
-                  image: state.movie.posterPath ?? '',
-                ),
+                CustomMovieDetailsImage(movieModel: state.movie),
                 MovieSpecifications(movieDetailsModel: state.movie),
               ],
             ),

@@ -1,21 +1,37 @@
-import 'package:movies_app/core/models/movie_entity.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:movies_app/core/models/movie_model/genre.dart';
 import 'package:movies_app/core/models/movie_model/production_company.dart';
 import 'package:movies_app/core/models/movie_model/production_country.dart';
 import 'package:movies_app/core/models/movie_model/spoken_language.dart';
 
-class MovieModel extends MovieEntity {
+part 'movie_model.g.dart';
+
+@HiveType(typeId: 0)
+class MovieModel extends HiveObject {
   bool? adult;
   String? backdropPath;
   List<dynamic>? genreIds;
+
+  @HiveField(0)
   int? id;
+
   String? originalLanguage;
   String? originalTitle;
+
+  @HiveField(1)
   String? overview;
+
   num? popularity;
+
+  @HiveField(2)
   String? posterPath;
+
+  @HiveField(3)
   String? releaseDate;
+
+  @HiveField(4)
   String? title;
+
   bool? video;
   num? voteAverage;
   int? voteCount;
@@ -61,16 +77,7 @@ class MovieModel extends MovieEntity {
     this.spokenLanguages,
     this.status,
     this.tagline,
-  }) : super(
-          movieId: id,
-          movieTitle: title,
-          moviePosterPath: posterPath,
-          movieGenres: [],
-          movieReleaseDate: releaseDate,
-          movieVoteAverage: voteAverage,
-          movieOverview: overview,
-          movieRuntime: 0,
-        );
+  });
 
   factory MovieModel.fromJson(Map<String, dynamic> json) => MovieModel(
         adult: json['adult'] as bool?,

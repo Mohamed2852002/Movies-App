@@ -10,3 +10,5 @@ const String kNoMoviesImage = 'assets/images/no_movies_image.svg';
 const String kTextFieldSearchIcon = 'assets/icons/text_field_search_icon.svg';
 
 const String kImagePath = 'https://image.tmdb.org/t/p/original';
+
+const String kSavedMoviesBox = 'saved_movies_box';
