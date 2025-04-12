@@ -2,6 +2,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:movies_app/core/models/movie_model/movie_model.dart';
 import 'package:movies_app/core/utils/functions/setup_service_locator.dart';
+import 'package:movies_app/features/category/data/models/category/category_model.dart';
+import 'package:movies_app/features/category/presentation/views/movies_by_category_view.dart';
 import 'package:movies_app/features/home/data/repos/movie_details_repo_impl.dart';
 import 'package:movies_app/features/home/presentation/view_model/get_movie_details_cubit/get_movie_details_cubit.dart';
 import 'package:movies_app/features/home/presentation/view_model/get_similar_movies_cubit/get_similar_movies_cubit.dart';
@@ -10,6 +12,7 @@ import 'package:movies_app/features/home/presentation/views/navigation_view.dart
 
 abstract class AppRouter {
   static const String kMovieDetailsView = '/details';
+  static const String kMoviesListByCategory = '/moviesListByCategory';
   static final router = GoRouter(
     routes: [
       GoRoute(
@@ -40,6 +43,11 @@ abstract class AppRouter {
             child: MovieDetailsView(movieModel: movieModel),
           );
         },
+      ),
+      GoRoute(
+        path: kMoviesListByCategory,
+        builder: (context, state) =>
+            MoviesByCategoryView(categoryModel: state.extra as CategoryModel),
       ),
     ],
   );

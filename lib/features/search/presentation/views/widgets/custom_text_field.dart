@@ -1,8 +1,10 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:movies_app/core/constants/constants.dart';
+import 'package:movies_app/features/search/presentation/view_model/get_searched_movies_cubit/get_searched_movies_cubit.dart';
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField({super.key});
@@ -18,6 +20,7 @@ class CustomTextField extends StatelessWidget {
       ),
       child: TextField(
         onChanged: (text) {
+          context.read<GetSearchedMoviesCubit>().getSearchedMovies(query: text);
           log(text);
         },
         style: const TextStyle(color: Colors.white),

@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
@@ -7,6 +8,8 @@ import 'package:movies_app/core/constants/constants.dart';
 import 'package:movies_app/core/models/movie_model/movie_model.dart';
 import 'package:movies_app/core/utils/app_router.dart';
 import 'package:movies_app/core/utils/widgets/custom_loading_widget.dart';
+import 'package:movies_app/features/watchlist/presentation/view_model/watch_list_cubit/watch_list_cubit.dart';
+import 'package:movies_app/features/watchlist/presentation/view_model/watch_list_cubit/watch_list_state.dart';
 
 class CustomMovieImage extends StatefulWidget {
   const CustomMovieImage(
@@ -25,7 +28,6 @@ class CustomMovieImage extends StatefulWidget {
 }
 
 class _CustomMovieImageState extends State<CustomMovieImage> {
-  bool isSelected = false;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -50,14 +52,36 @@ class _CustomMovieImageState extends State<CustomMovieImage> {
             ),
           ),
         ),
-        GestureDetector(
-          onTap: () {
-            isSelected = !isSelected;
-            setState(() {});
+        BlocBuilder<WatchListCubit, WatchListState>(
+          builder: (context, state) {
+            return GestureDetector(
+              onTap: () {
+                setState(() {
+                  if (context
+                      .read<WatchListCubit>()
+                      .watchListBox
+                      .containsKey(widget.movieModel.id)) {
+                    context.read<WatchListCubit>().removeMovieFromWatchList(
+                          movieId: widget.movieModel.id ?? 0,
+                        );
+                  } else {
+                    context.read<WatchListCubit>().addMovieToWatchList(
+                          movie: widget.movieModel,
+                          movieId: widget.movieModel.id ?? 0,
+                        );
+                  }
+                });
+              },
+              child: SvgPicture.asset(
+                context
+                        .read<WatchListCubit>()
+                        .watchListBox
+                        .containsKey(widget.movieModel.id)
+                    ? kBookmarkSelected
+                    : kBookmark,
+              ),
+            );
           },
-          child: SvgPicture.asset(
-            isSelected ? kBookmarkSelected : kBookmark,
-          ),
         ),
       ],
     );

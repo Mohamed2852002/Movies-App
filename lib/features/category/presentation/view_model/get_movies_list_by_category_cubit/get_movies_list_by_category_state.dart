@@ -1,4 +1,4 @@
-import 'package:movies_app/core/models/movie_entity.dart';
+import 'package:movies_app/core/models/movie_model/movie_model.dart';
 
 class GetMoviesListByCategoryState {}
 
@@ -10,7 +10,7 @@ final class GetMoviesListByCategoryLoading
 
 final class GetMoviesListByCategorySuccess
     extends GetMoviesListByCategoryState {
-  final List<MovieEntity> movies;
+  final List<MovieModel> movies;
 
   GetMoviesListByCategorySuccess({required this.movies});
 }

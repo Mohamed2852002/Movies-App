@@ -5,21 +5,21 @@ import 'package:movies_app/core/utils/widgets/custom_movie_image.dart';
 import 'package:movies_app/core/utils/widgets/movie_information.dart';
 
 class CustomWatchlistMovie extends StatelessWidget {
-  const CustomWatchlistMovie({super.key});
-
+  const CustomWatchlistMovie({super.key, required this.movie});
+  final MovieModel movie;
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: REdgeInsets.only(bottom: 14, left: 25, right: 25),
+      padding: const EdgeInsets.symmetric(horizontal: 25),
       child: Row(
         children: [
           CustomMovieImage(
             width: 140,
             height: 89,
-            movieModel: MovieModel(),
+            movieModel: movie,
           ),
           const RSizedBox(width: 16),
-          const MovieInformationWidget(),
+          MovieInformationWidget(movie: movie),
         ],
       ),
     );
